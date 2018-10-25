@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/songform}" th:object="${song}" method="post">
+    Name: <input type="text" th:field="*{name}" /><br />
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br />
+
+    Artist: <input type="text" th:field="*{artist}" /><br />
+    <span th:if="${#fields.hasErrors('artist')}" th:errors="*{artist}"></span><br />
+
+    Album: <input type="text" th:field="*{album}" /><br />
+    <span th:if="${#fields.hasErrors('album')}" th:errors="*{album}"></span><br />
+
+<input type="submit" value="submit" />
+</form>
+</body>
+</html>
